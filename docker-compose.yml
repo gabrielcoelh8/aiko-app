@@ -1,0 +1,30 @@
+version: "3"
+services:
+    banco-dados:
+        container_name: banco-dados
+        image:
+            postgres
+        env_file:
+            - .env
+        expose:
+            - $FUNDACOES_DB_PORT
+        ports:
+            - "5434:5432"
+        restart: always
+        volumes:
+            - ./banco-dados:/db/postgres
+    servico-novo:
+        container_name: servico-novo
+        build:
+            context: ./servico-novo
+            dockerfile: Dockerfile
+            args:
+                - FUNDACOES_URL_CERTIFICADO
+        restart: always
+        ports:
+            - "8000:8000"
+        stop_signal: SIGINT
+        env_file:
+            - .env
+volumes:
+    banco-dados:
