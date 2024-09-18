@@ -9,9 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      }
+        "blue": "#1DA1F2"
+      },
+      fontFamily: {
+        bookerly: ['Bookerly', 'sans-serif'],
+      },
     },
   },
   plugins: [],

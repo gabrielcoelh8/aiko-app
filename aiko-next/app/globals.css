@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Bookerly";
+  src: url("assets/fonts/Bookerly.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@layer components {
+  .card {
+    @apply flex items-center justify-center;
+    height: 100px;
+    background-color: theme("colors.blue");
+  }
+}
