@@ -1,25 +1,25 @@
 version: "3"
 services:
     banco-dados:
-        container_name: banco-dados
+        container_name: bd-postgres
         image:
             postgres
         env_file:
             - .env
         expose:
-            - $FUNDACOES_DB_PORT
+            - $
         ports:
             - "5434:5432"
         restart: always
         volumes:
-            - ./banco-dados:/db/postgres
-    servico-novo:
-        container_name: servico-novo
+            - ./bd-postgres:/db/postgres
+    aiko-next:
+        container_name: aiko-next
         build:
-            context: ./servico-novo
+            context: ./aiko-next
             dockerfile: Dockerfile
             args:
-                - FUNDACOES_URL_CERTIFICADO
+                - 
         restart: always
         ports:
             - "8000:8000"
@@ -27,4 +27,4 @@ services:
         env_file:
             - .env
 volumes:
-    banco-dados:
+    bd-postgres:
