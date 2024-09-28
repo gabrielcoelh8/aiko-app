@@ -9,9 +9,9 @@ import {
   UserOutlined,
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
-import { Breadcrumb, Layout, Menu, theme } from 'antd';
+import { Layout, Menu, theme } from 'antd';
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Sider } = Layout;
 
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -41,38 +41,18 @@ const items: MenuItem[] = [
   getItem('Files', '9', <FileOutlined />),
 ];
 
-const App: React.FC = () => {
+const SiderAntD: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
   const {
     token: { colorBgContainer, borderRadiusLG },
-  } = theme.useToken();
+   } = theme.useToken();
 
   return (
-    <Layout style={{ minHeight: '100vh' }}>
       <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
         <div className="demo-logo-vertical" />
-        <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />
+        <Menu theme="light" defaultSelectedKeys={['1']} mode="inline" items={items} />
       </Sider>
-      <Layout>
-        <Header style={{ padding: 0, background: colorBgContainer }} />
-        <Content style={{ margin: '0 16px' }}>
-          <div
-            style={{
-              padding: 24,
-              minHeight: 360,
-              background: colorBgContainer,
-              borderRadius: borderRadiusLG,
-            }}
-          >
-            Content
-          </div>
-        </Content>
-        <Footer style={{ textAlign: 'center' }}>
-          Aiko ©{new Date().getFullYear()} Created by G. Coelho
-        </Footer>
-      </Layout>
-    </Layout>
   );
 };
 
-export default App;
+export default SiderAntD;
