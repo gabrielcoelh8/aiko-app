@@ -8,14 +8,10 @@ import {
 } from '@ant-design/icons';
 import { Flex, FloatButton, Switch } from 'antd';
 
-const BOX_SIZE = 160;
-
-const BUTTON_SIZE = 40;
-
 const style: React.CSSProperties = {
   position: 'fixed',
-  insetInlineEnd: ((BOX_SIZE - BUTTON_SIZE) / 2),
-  bottom: (BOX_SIZE - BUTTON_SIZE / 2),
+  right: 16,
+  bottom: 16,
 };
 
 const CFloatBtns: React.FC = () => {

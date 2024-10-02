@@ -42,9 +42,9 @@ const SiderAntD: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
-      <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
+      <Sider collapsible theme="light" collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
         <div className="demo-logo-vertical" />
-        <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />
+        <Menu defaultSelectedKeys={['1']} mode="inline" items={items} />
       </Sider>
   );
 };
