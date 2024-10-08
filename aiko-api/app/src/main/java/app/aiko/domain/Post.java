@@ -1,10 +1,9 @@
-package app.aiko.model;
+package app.aiko.domain;
 
 import jakarta.persistence.*;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Objects;
 //import jakarta.persistence.OneToMany;
 
 @Entity

@@ -1,4 +1,4 @@
-package app.aiko.model;
+package app.aiko.domain;
 
 import jakarta.persistence.*;
 
