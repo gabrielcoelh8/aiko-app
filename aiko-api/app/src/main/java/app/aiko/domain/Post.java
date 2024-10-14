@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 
 import java.util.Date;
 import java.util.List;
-//import jakarta.persistence.OneToMany;
 
 @Entity
 public class Post {
