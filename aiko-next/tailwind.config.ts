@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "blue": "#1DA1F2"
+        "blue_twt": "#1DA1F2",
       },
       fontFamily: {
         bookerly: ['Bookerly', 'sans-serif'],
@@ -19,12 +19,9 @@ const config: Config = {
   plugins: [
     require('daisyui'),
   ],
-};
-
-module.exports = {
   daisyui: {
     themes: ["light", "dark", "cupcake"],
   },
-}
+};
 
 export default config;

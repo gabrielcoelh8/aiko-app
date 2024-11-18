@@ -14,6 +14,6 @@ const CHeader: React.FC = () => {
     <Header style={{ padding: 0, background: colorBgContainer }}>
     </Header>
   );
-};
+};  
 
 export default CHeader;

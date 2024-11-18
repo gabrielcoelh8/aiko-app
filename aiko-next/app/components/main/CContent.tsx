@@ -15,17 +15,16 @@ const CContent: React.FC = () => {
     <Content style={{ margin: "0 16px" }}>
       <div
         style={{
+          marginInline: 100,
           padding: 24,
           minHeight: 360,
           maxWidth: 1080,
-          background: colorBgContainer,
-          borderRadius: borderRadiusLG,
         }}
       >
         <Typography>
           <Title level={2}>Dense</Title>
           {conto_example.content.map((paragrafo: string, index: number) => (
-            <Paragraph key={index} style={{ fontFamily: "bookerly" }}>
+            <Paragraph key={index} style={{ fontFamily: "bookerly", fontSize: 19 }}>
               {paragrafo}
             </Paragraph>
           ))}

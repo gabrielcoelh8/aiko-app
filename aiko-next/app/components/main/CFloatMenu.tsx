@@ -1,22 +1,20 @@
 "use client"
 
-import React, { useState } from 'react';
+import React from 'react';
 import {
-  AlignLeftOutlined,
-  BoldOutlined,
-  SettingOutlined,
+  HeartOutlined,
+  BookOutlined,
+  MenuOutlined,
 } from '@ant-design/icons';
-import { Flex, FloatButton, Switch } from 'antd';
+import { Flex, FloatButton } from 'antd';
 
 const style: React.CSSProperties = {
   position: 'fixed',
-  right: 16,
-  bottom: 16,
+  left: 0,
+  top: 0,
 };
 
-const CFloatBtns: React.FC = () => {
-  const [open, setOpen] = useState<boolean>(true);
-
+const CFloatMenu: React.FC = () => {
   return (
     <Flex justify="space-evenly" align="center">
     <div> 
@@ -26,15 +24,14 @@ const CFloatBtns: React.FC = () => {
             trigger="click"
             placement={"top"}
             style={style}
-            icon={<SettingOutlined />}
+            icon={<MenuOutlined />}
           >
-            <FloatButton icon={<BoldOutlined />} />
-            <FloatButton icon={<AlignLeftOutlined />} />
+            <FloatButton icon={<BookOutlined />} />
+            <FloatButton icon={<HeartOutlined />} />
           </FloatButton.Group>
-        )
     </div>
   </Flex>
   );
 };
 
-export default CFloatBtns;
+export default CFloatMenu;

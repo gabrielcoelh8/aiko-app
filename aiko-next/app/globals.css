@@ -13,6 +13,6 @@
   .card {
     @apply flex items-center justify-center;
     height: 100px;
-    background-color: theme("colors.blue");
+    background-color: theme("colors.blue_twt");
   }
 }
