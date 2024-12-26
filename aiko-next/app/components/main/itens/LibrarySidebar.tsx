@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Search, Book, Album } from 'lucide-react';
+import { Search, Heart, LibraryBig } from 'lucide-react';
 
 const LibrarySidebar = () => {
   const [isSearching, setIsSearching] = useState(false);
@@ -14,7 +14,7 @@ const LibrarySidebar = () => {
           className="p-2 hover:bg-gray-800 rounded-full absolute left-0"
           aria-label="Back"
         >
-          <Album className="w-5 h-5" />
+          <LibraryBig className="w-5 h-5" />
         </button>
         <h2 className="text-lg font-semibold w-full text-center">Biblioteca</h2>
       </div>
@@ -22,8 +22,8 @@ const LibrarySidebar = () => {
       {/* Navigation and Search */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2 text-gray-400">
-          <Book className="w-4 h-4" />
-          <span>Títulos</span>
+          <Heart className="w-4 h-4" />
+          <span>Favoritos</span>
         </div>
         
         {isSearching ? (

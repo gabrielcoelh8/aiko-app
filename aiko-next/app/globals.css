@@ -4,7 +4,14 @@
 
 @font-face {
   font-family: "Bookerly";
-  src: url("assets/fonts/Bookerly.ttf") format("ttf");
+  src: url("assets/fonts/Bookerly.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Unifraktur";
+  src: url("assets/fonts/UnifrakturMaguntia-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }

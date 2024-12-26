@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { CircleUser, Heart, BookOpen, Play, Pause, SkipBack, SkipForward, Volume2, Square } from 'lucide-react';
+import { CircleUser, Bell, BookOpen } from 'lucide-react';
 
 const AuthorSidebar = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -7,7 +7,7 @@ const AuthorSidebar = () => {
   const [isFollowing, setIsFollowing] = useState(false);
 
   return (
-    <div className="w-full lg:w-64 flex flex-col gap-4">
+    <>
       {/* Author Info Section */}
       <div className="bg-[#0d0d0d] rounded-lg p-4 flex flex-col gap-4">
         {/* Author Header */}
@@ -38,10 +38,10 @@ const AuthorSidebar = () => {
           className="flex items-center gap-2 text-gray-400 hover:text-gray-300"
           onClick={() => setIsFollowing(!isFollowing)}
         >
-          <Heart 
-            className={`w-5 h-5 ${isFollowing ? 'fill-current text-red-500' : ''}`}
+          <Bell 
+            className={`w-5 h-5 ${isFollowing ? 'fill-current text-white' : ''}`}
           />
-          <span>{isFollowing ? 'Seguindo' : 'Seguir'}</span>
+          <span>{isFollowing ? 'Inscrito' : 'Inscrever-se'}</span>
         </button>
 
         {/* Recommended Section */}
@@ -68,62 +68,10 @@ const AuthorSidebar = () => {
               <p className="text-sm text-gray-400">Romance</p>
             </div>
           </div>
+          
         </div>
       </div>
-
-      {/* Music Player Section */}
-      <div className="bg-[#0d0d0d] rounded-lg p-4 flex flex-col gap-4">
-        {/* Song Info */}
-        <div className="flex justify-between items-center">
-          <div>
-            <h3 className="font-medium">Dom Casmurro - Cap. 1</h3>
-            <p className="text-sm text-gray-400">Audiobook</p>
-          </div>
-          <img
-            src="https://coffective.com/wp-content/uploads/2018/06/default-featured-image.png.jpg"
-            alt="Capa do álbum"
-            className="w-10 h-10 rounded"
-          />
-        </div>
-
-        {/* Controls */}
-        <div className="flex justify-between items-center px-2">
-          <button className="p-2 hover:bg-gray-800 rounded-full">
-            <Square className="w-4 h-4" />
-          </button>
-          <button className="p-2 hover:bg-gray-800 rounded-full">
-            <SkipBack className="w-4 h-4" />
-          </button>
-          <button 
-            className="p-2 hover:bg-gray-800 rounded-full"
-            onClick={() => setIsPlaying(!isPlaying)}
-          >
-            {isPlaying ? (
-              <Pause className="w-6 h-6" />
-            ) : (
-              <Play className="w-6 h-6" />
-            )}
-          </button>
-          <button className="p-2 hover:bg-gray-800 rounded-full">
-            <SkipForward className="w-4 h-4" />
-          </button>
-          <button className="p-2 hover:bg-gray-800 rounded-full">
-            <Volume2 className="w-4 h-4" />
-          </button>
-        </div>
-
-        {/* Progress Bar */}
-        <div className="flex flex-col gap-1">
-          <div className="relative w-full h-1 bg-gray-800 rounded">
-            <div className="absolute left-0 h-full w-1/3 bg-white rounded" />
-          </div>
-          <div className="flex justify-between text-xs text-gray-400">
-            <span>0:00</span>
-            <span>2:11</span>
-          </div>
-        </div>
-      </div>
-    </div>
+    </>
   );
 };
 
