@@ -11,46 +11,36 @@ import ContentSection from "./itens/ContentSection";
 type TextAlignType = 'left' | 'right' | 'center' | 'justify';
 
 const Prebuild = () => {
-  // Use useEffect to handle client-side state initialization
   const [mounted, setMounted] = useState(false);
   const [textAlignment, setTextAlignment] = useState<TextAlignType>('justify');
 
-  // Handle client-side mounting
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  // Don't render anything until mounted
   if (!mounted) {
     return null;
   }
 
   return (
     <div className="h-screen flex flex-col bg-black text-white">
-      {/* Navbar Section */}
       <Navbar 
         textAlignment={textAlignment} 
         setTextAlignment={setTextAlignment}
       />
 
-      {/* Content Section */}
-      <main className="flex-1 overflow-y-auto pt-[4.5rem] pb-[4.5rem]">
+      <main className="flex-1 overflow-y-auto pt-[4.5rem] pb-[1.5rem]">
         <div className="flex flex-col lg:flex-row gap-6 px-4 lg:px-6 h-full">
-          {/* Left Content Section */}
           <LibrarySidebar />
           
-          {/* Mid Content Section */}
-          <ContentSection 
-            title={conto_example.title}
-            subtitle={conto_example.subtitle}
-            image={conto_example.image}
-            content={conto_example.content}
-            textAlignment={textAlignment}
-          />
-
-          {/* Right Content Section */}
-          <div className="w-full lg:w-64 flex flex-col gap-4">
-            <AuthorSidebar />
+          <div className="flex-1 flex flex-col">
+            <ContentSection 
+              title={conto_example.title}
+              subtitle={conto_example.subtitle}
+              image={conto_example.image}
+              content={conto_example.content}
+              textAlignment={textAlignment}
+            />
             <MusicPlayer 
               title="Dom Casmurro - Cap. 1"
               subtitle="Audiobook"
@@ -58,16 +48,12 @@ const Prebuild = () => {
               duration="2:11"
             />
           </div>
-        </div>
-      </main>
-      {/* Footer Section */}
-      <footer className="fixed bottom-0 left-0 right-0 z-50 bg-[#0d0d0d] px-4 py-3">
-        <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
-          <div className="text-sm text-gray-400 order-2 lg:order-1">
-            © 2024 Perfake Productions. All rights reserved.
+
+          <div className="w-full lg:w-64">
+            <AuthorSidebar />
           </div>
         </div>
-      </footer>
+      </main>
     </div>
   );
 };

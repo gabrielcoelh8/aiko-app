@@ -1,5 +1,3 @@
-"use client"
-
 import React from 'react';
 import { Typography } from "antd";
 
@@ -22,11 +20,12 @@ const ContentSection: React.FC<ContentSectionProps> = ({
 }) => {
   return (
     <div className="flex-1 flex flex-col gap-6">
+      {/* Image Header Section - Fixed Height */}
       <div className="bg-[#0d0d0d] rounded-lg overflow-hidden relative">
         <img
           src={image}
           alt={title}
-          className="w-full h-48 lg:h-72 object-cover"
+          className="w-full h-48 lg:h-52 object-cover"
         />
         <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
           <div className="flex flex-col lg:flex-row lg:items-end gap-2 lg:gap-4">
@@ -38,37 +37,40 @@ const ContentSection: React.FC<ContentSectionProps> = ({
         </div>
       </div>
 
-      <div className="flex-1 overflow-y-auto px-1">
-        <div style={{ textAlign: textAlignment }}>
-          {content.map((paragrafo: string, index: number) => (
-            <Paragraph
-              key={index}
-              style={{ 
-                fontFamily: "Bookerly, serif", // Adicionado fallback
-                fontSize: 20, 
-                color: "white",
-                margin: '1em 0',
-                lineHeight: '1.5em'
-              }}
-            >
-              {index === 0 ? (
-                <>
-                  <span style={{
-                    float: 'left',
-                    fontSize: '4em',
-                    lineHeight: '0.7em',
-                    paddingRight: '0.1em',
-                    fontFamily: 'Unifraktur, serif' // Adicionado fallback
-                  }}>
-                    {paragrafo.charAt(0)}
-                  </span>
-                  {paragrafo.slice(1)}
-                </>
-              ) : (
-                paragrafo
-              )}
-            </Paragraph>
-          ))}
+      {/* Content Section with Fixed Height and Scroll */}
+      <div className="flex-1 rounded-lg">
+        <div className="h-[calc(100vh-29rem)] overflow-y-auto pr-4 custom-scrollbar">
+          <div style={{ textAlign: textAlignment }}>
+            {content.map((paragrafo: string, index: number) => (
+              <Paragraph
+                key={index}
+                style={{ 
+                  fontFamily: "Bookerly, serif",
+                  fontSize: 20, 
+                  color: "white",
+                  margin: '1em 0',
+                  lineHeight: '1.5em'
+                }}
+              >
+                {index === 0 ? (
+                  <>
+                    <span style={{
+                      float: 'left',
+                      fontSize: '4em',
+                      lineHeight: '0.7em',
+                      paddingRight: '0.1em',
+                      fontFamily: 'Unifraktur, serif'
+                    }}>
+                      {paragrafo.charAt(0)}
+                    </span>
+                    {paragrafo.slice(1)}
+                  </>
+                ) : (
+                  paragrafo
+                )}
+              </Paragraph>
+            ))}
+          </div>
         </div>
       </div>
     </div>

@@ -9,7 +9,7 @@ const AuthorSidebar = () => {
   return (
     <>
       {/* Author Info Section */}
-      <div className="bg-[#0d0d0d] rounded-lg p-4 flex flex-col gap-4">
+      <div className="w-full lg:w-64 bg-[#0a0a0a] rounded-lg p-4 flex flex-col gap-4 h-full">
         {/* Author Header */}
         <div className="flex justify-between items-start">
           <div>
