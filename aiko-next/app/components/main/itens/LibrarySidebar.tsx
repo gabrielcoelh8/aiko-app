@@ -6,7 +6,7 @@ const LibrarySidebar = () => {
   const [selectedItem, setSelectedItem] = useState<number | null>(null);
 
   return (
-    <div className="w-full lg:w-64 bg-[#0a0a0a] rounded-lg p-4 flex flex-col gap-4 h-full">
+    <div className="w-full lg:w-64 bg-[#0a0a0a] rounded-3xl p-4 flex flex-col gap-4 h-full">
       {/* Top header */}
       <div className="flex items-center relative">
         <button 

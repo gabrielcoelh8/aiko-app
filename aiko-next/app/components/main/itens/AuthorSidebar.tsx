@@ -2,14 +2,13 @@ import { useState } from 'react';
 import { CircleUser, Bell, BookOpen } from 'lucide-react';
 
 const AuthorSidebar = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
   const [selectedItem, setSelectedItem] = useState<number | null>(null);
   const [isFollowing, setIsFollowing] = useState(false);
 
   return (
     <>
       {/* Author Info Section */}
-      <div className="w-full lg:w-64 bg-[#0a0a0a] rounded-lg p-4 flex flex-col gap-4 h-full">
+      <div className="w-full lg:w-64 bg-[#0a0a0a] rounded-3xl p-4 flex flex-col gap-4 h-full">
         {/* Author Header */}
         <div className="flex justify-between items-start">
           <div>

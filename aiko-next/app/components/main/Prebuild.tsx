@@ -7,6 +7,7 @@ import MusicPlayer from "./itens/MusicPlayer";
 import Navbar from "./itens/Navbar";
 import React, { useState, useEffect } from 'react';
 import ContentSection from "./itens/ContentSection";
+import FormattingControls from "./itens/FormattingControls";
 
 type TextAlignType = 'left' | 'right' | 'center' | 'justify';
 
@@ -31,8 +32,9 @@ const Prebuild = () => {
 
       <main className="flex-1 overflow-y-auto pt-[4.5rem] pb-[1.5rem]">
         <div className="flex flex-col lg:flex-row gap-6 px-4 lg:px-6 h-full">
-          <LibrarySidebar />
-          
+          <div className="flex flex-col w-full lg:w-64">
+            <LibrarySidebar />
+          </div>
           <div className="flex-1 flex flex-col">
             <ContentSection 
               title={conto_example.title}
@@ -49,7 +51,11 @@ const Prebuild = () => {
             />
           </div>
 
-          <div className="w-full lg:w-64">
+          <div className="flex flex-col w-full lg:w-64">
+            <FormattingControls 
+              setTextAlignment={setTextAlignment} 
+              textAlignment={textAlignment}
+              />
             <AuthorSidebar />
           </div>
         </div>

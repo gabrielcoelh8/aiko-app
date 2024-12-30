@@ -1,7 +1,5 @@
 import { useState } from "react";
-import SettingsPopup from "./SettingsPopUp";
 import {
-  Sun,
   Menu,
   X,
   Bell,
@@ -113,6 +111,15 @@ const Navbar: React.FC<NavbarProps> = ({ textAlignment, setTextAlignment }) => {
           >
             <Bell />
           </button>
+
+          <button
+            type="button"
+            className="p-2 hover:bg-gray-800 rounded-full"
+            aria-label="Configurações"
+          >
+            <Settings />
+          </button>
+
           <button
             type="button"
             className="p-2 hover:bg-gray-800 rounded-full"
@@ -121,13 +128,7 @@ const Navbar: React.FC<NavbarProps> = ({ textAlignment, setTextAlignment }) => {
             <CircleUser />
           </button>
 
-          {/* Settings Popup Section */}
-          <div className="flex items-center space-x-4 order-1 lg:order-2">
-            <SettingsPopup
-              textAlignment={textAlignment}
-              setTextAlignment={setTextAlignment}
-            />
-          </div>
+        
         </div>
       </div>
     </nav>
