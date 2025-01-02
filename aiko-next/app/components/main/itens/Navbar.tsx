@@ -13,14 +13,7 @@ import {
   LibraryBig
 } from "lucide-react";
 
-interface NavbarProps {
-  textAlignment: "left" | "right" | "center" | "justify";
-  setTextAlignment: (
-    alignment: "left" | "right" | "center" | "justify"
-  ) => void;
-}
-
-const Navbar: React.FC<NavbarProps> = ({ textAlignment, setTextAlignment }) => {
+const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -59,35 +52,35 @@ const Navbar: React.FC<NavbarProps> = ({ textAlignment, setTextAlignment }) => {
         <div className="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-4 mt-4 lg:mt-0">
           <button
             type="button"
-            className="p-2 hover:bg-gray-800 rounded-full"
+            className="p-2 text-[#c76e51] rounded-full transition-colors duration-200 hover:bg-[#c76e51] hover:text-white"
             aria-label="Início"
           >
-            <House />
+            <House className="h-6 w-6" />
           </button>
           <button
             type="button"
-            className="p-2 hover:bg-gray-800 rounded-full"
+            className="p-2 hover:text-[#d37556] rounded-full"
             aria-label="Voltar"
           >
             <ChevronLeft />
           </button>
           <button
             type="button"
-            className="p-2 hover:bg-gray-800 rounded-full"
+            className="p-2 hover:text-[#d37556] rounded-full"
             aria-label="Avançar"
           >
             <ChevronRight />
           </button>
           <button
             type="button"
-            className="p-2 hover:bg-gray-800 rounded-full"
+            className="p-2 hover:text-[#d37556] rounded-full"
             aria-label="Mais opções"
           >
             <LibraryBig />
           </button>
           <button
             type="button"
-            className="p-2 hover:bg-gray-800 rounded-full"
+            className="p-2 hover:text-[#d37556] rounded-full"
             aria-label="Mais opções"
           >
             <Info />
@@ -98,7 +91,7 @@ const Navbar: React.FC<NavbarProps> = ({ textAlignment, setTextAlignment }) => {
         <div className="hidden lg:flex space-x-4">
           <button
             type="button"
-            className="p-2 hover:bg-gray-800 rounded-full"
+            className="p-2 hover:text-[#d37556] rounded-full"
             aria-label="Adicionar"
           >
             <Plus />
@@ -106,7 +99,7 @@ const Navbar: React.FC<NavbarProps> = ({ textAlignment, setTextAlignment }) => {
 
           <button
             type="button"
-            className="p-2 hover:bg-gray-800 rounded-full"
+            className="p-2 hover:text-[#d37556] rounded-full"
             aria-label="Notificações"
           >
             <Bell />
@@ -114,7 +107,7 @@ const Navbar: React.FC<NavbarProps> = ({ textAlignment, setTextAlignment }) => {
 
           <button
             type="button"
-            className="p-2 hover:bg-gray-800 rounded-full"
+            className="p-2 hover:text-[#d37556] rounded-full"
             aria-label="Configurações"
           >
             <Settings />

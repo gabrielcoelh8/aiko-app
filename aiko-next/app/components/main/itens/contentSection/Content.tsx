@@ -18,7 +18,7 @@ const Content: React.FC<ContentProps> = ({ content, textAlignment }) => {
               key={index}
               style={{ 
                 fontFamily: "Bookerly, serif",
-                fontSize: 20, 
+                fontSize: 21, 
                 color: "white",
                 margin: '1em 0',
                 lineHeight: '1.5em'

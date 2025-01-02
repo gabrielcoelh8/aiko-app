@@ -1,6 +1,11 @@
-// Cover.tsx
 import React from 'react';
 import { Bookmark, Star } from 'lucide-react';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 interface CoverProps {
   title: string;
@@ -15,18 +20,43 @@ const Cover: React.FC<CoverProps> = ({ title, subtitle, image, author = 'Author 
       <img
         src={image}
         alt={title}
-        className="w-full h-48 lg:h-52 object-cover grayscale"
+        className="w-full h-48 lg:h-52 object-cover grayscale brightness-50"
       />
       
       <div className="absolute top-4 left-4 flex gap-4">
         {/* Action buttons */}
         <div className="flex flex-col gap-3">
-          <button className="text-white hover:text-[#c76e51] transition-colors">
-            <Bookmark className="w-6 h-6 fill-transparent hover:fill-current" />
-          </button>
-          <button className="text-white hover:text-[#c76e51] transition-colors">
-            <Star className="w-6 h-6 fill-transparent hover:fill-current" />
-          </button>
+        <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <button className="text-white hover:text-[#c76e51] transition-colors">
+                  <Bookmark className="w-6 h-6 fill-transparent hover:fill-current" />
+                </button>
+              </TooltipTrigger>
+              <TooltipContent 
+                className="bg-zinc-900 text-zinc-100 border-zinc-800"
+                sideOffset={5}
+              >
+                <p className="text-sm">Adicionar à biblioteca</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <button className="text-white hover:text-[#c76e51] transition-colors">
+                  <Star className="w-6 h-6 fill-transparent hover:fill-current" />
+                </button>
+              </TooltipTrigger>
+              <TooltipContent 
+                className="bg-zinc-900 text-zinc-100 border-zinc-800"
+                sideOffset={5}
+              >
+                <p className="text-sm">Marcar como favorito</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         </div>
         
         {/* Title and author */}
